@@ -22,7 +22,10 @@ class TextPost(Post):  # Inherit properly
 
     def __str__(self):
         
-        return '@{}: "{}"\n\t{}'.format(self.user, self.text, self.timestamp.strftime('%A, %b %d, %Y'))
+        return '@{}: "{}"\n\t{}'.format(
+            self.user, 
+            self.text, 
+            self.timestamp.strftime('%A, %b %d, %Y'))
 
 
 class PicturePost(Post):  # Inherit properly
@@ -32,7 +35,11 @@ class PicturePost(Post):  # Inherit properly
         self.timestamp = timestamp
 
     def __str__(self):
-        return '@{}: "{}"\n\t{}\n\t{}'.format(self.user, self.text, self.image_url, self.timestamp.strftime('%A, %b %d, %Y'))
+        return '@{}: "{}"\n\t{}\n\t{}'.format(
+            self.user, 
+            self.text, 
+            self.image_url, 
+            self.timestamp.strftime('%A, %b %d, %Y'))
 
 
 class CheckInPost(Post):  # Inherit properly
@@ -43,6 +50,10 @@ class CheckInPost(Post):  # Inherit properly
         self.timestamp = timestamp
 
     def __str__(self):
-        answer = '@{} Checked In: "{}"\n\t{}, {}\n\t{}'.format(self.user.first_name, self.text, self.latitude, self.longitude, self.timestamp.strftime('%A, %b %d, %Y'))
-        print(answer)
-        return answer
+        return '@{} Checked In: "{}"\n\t{}, {}\n\t{}'.format(
+            self.user.first_name, 
+            self.text, self.latitude, 
+            self.longitude, 
+            self.timestamp.strftime('%A, %b %d, %Y'))
+        
+        
